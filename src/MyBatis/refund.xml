@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-mybatis.org/DTD Mapper 3.0 //en"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="rfs">
+
+				<!-- 소비자측 -->
+<!-- 	사진조회 -->
+	<select id="searchF" parameterType="String" resultType="bean.FileVo">
+		select * from sProduct where pCode = '${_parameter}'
+	</select>
+				
+<!-- 	조회하기(search) -->
+	<select id="search" parameterType="bean.Param" resultType="bean.RecordVo">
+		select * from sRecord where (rRefund=1 or rRefund=2 or rRefund=3) and rId = #{rId} order by rRefund
+	</select>
+	
+	<select id="wSearch" parameterType="bean.Param" resultType="bean.RecordVo">
+		select * from sRecord  where (rRefund=1 or rRefund=2 or rRefund=3) and rDate >= sysdate-7 and rId = #{rId} order by rRefund
+	</select>
+	
+	<select id="mSearch" parameterType="bean.Param" resultType="bean.RecordVo">
+		select * from sRecord  where (rRefund=1 or rRefund=2 or rRefund=3) and  (rDate >= to_char(add_months(sysdate,-1),'rrrr-MM-dd') ) and rId = #{rId} order by rRefund
+	</select>
+	
+	<select id="tmSearch" parameterType="bean.Param" resultType="bean.RecordVo">
+		select * from sRecord  where (rRefund=1 or rRefund=2 or rRefund=3) and  (rDate >= to_char(add_months(sysdate,-2),'rrrr-MM-dd') ) and rId = #{rId} order by rRefund
+	</select>
+	
+<!-- 	소비자측수정하기 -->
+	<update id="update1" parameterType="Integer">
+		update sRecord set rRefund = 0 where rSerial = #{serial}
+	</update>
+
+
+
+
+			<!-- 판매자측 -->
+			
+<!-- 	사진조회 -->
+	<select id="searchFs" parameterType="String" resultType="bean.FileVo">
+		select * from sProduct where pCode = '${_parameter}'
+	</select>
+
+<!-- 	조회하기(search) -->
+	<select id="searchS" parameterType="bean.Param" resultType="bean.RecordVo">
+		select * from sRecord where (rRefund=1 or rRefund=2 or rRefund=3) order by rRefund
+	</select>
+	
+	<select id="wSearchS" parameterType="bean.Param" resultType="bean.RecordVo">
+		select * from sRecord  where (rRefund=1 or rRefund=2 or rRefund=3) and rDate >= sysdate-7 order by rRefund
+	</select>
+	
+	<select id="mSearchS" parameterType="bean.Param" resultType="bean.RecordVo">
+		select * from sRecord  where (rRefund=1 or rRefund=2 or rRefund=3) and  (rDate >= to_char(add_months(sysdate,-1),'rrrr-MM-dd') ) order by rRefund
+	</select>
+	
+	<select id="tmSearchS" parameterType="bean.Param" resultType="bean.RecordVo">
+		select * from sRecord  where (rRefund=1 or rRefund=2 or rRefund=3) and  (rDate >= to_char(add_months(sysdate,-2),'rrrr-MM-dd') )  order by rRefund
+	</select>
+	
+<!-- 	판매자측수정하기 -->
+	<update id="update2" parameterType="String">
+		update sRecord set rRefund = 3 where rSerial = #{serial}
+	</update>
+
+	
+</mapper>

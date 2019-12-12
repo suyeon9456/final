@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//en"
+      "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="main">
+
+	<!-- 베스트 남바완 -->
+	<select id="searchOne" resultType="bean.ProductVo">
+		select  pName, pprice, attfileb, s.pcode as pCode, pcolor, pPromotion, A.plike as plike, pstock, sprice, pdate, ppoint, pgender, sprice, psaleck from sproduct s
+      left join (select count(*) as pLike, pCode from slike group by pcode)A 
+      on s.pcode = A.pcode where ROWNUM =1order by A.pLike desc nulls last
+	</select>
+
+	<!-- 베스트들 -->
+	<select id="search"   resultType="bean.ProductVo">
+		    select  pName, pprice, attfileb, s.pcode as pCode, pcolor, pPromotion, A.plike as plike, pstock, sprice, pdate, ppoint, pgender, sprice, psaleck from sproduct s
+      left join (select count(*) as pLike, pCode from slike group by pcode)A 
+      on s.pcode = A.pcode where ROWNUM  BETWEEN 1 and 7 order by A.pLike desc nulls last
+	</select>
+	
+	<!-- 	7순위까지 -->
+	<select id="searchA"   resultType="bean.ProductVo">
+	select s.pcode as pCode from sproduct s
+      left join (select count(*) as pLike, pCode from slike group by pcode)A 
+      on s.pcode = A.pcode where ROWNUM  BETWEEN 1 and 7 order by A.pLike desc nulls last
+	</select>	
+
+	<!-- 	랜덤10개 -->
+	<select id="searchRandom"  parameterType="String" resultType="bean.ProductVo">
+		select * from (select * from sProduct where pCode not in (${_parameter}))
+		where rownum &lt; 11 order by dbms_random.value
+	</select>	
+</mapper>

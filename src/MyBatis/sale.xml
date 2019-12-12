@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org/DTD Mapper 3.0 //en"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+
+<mapper namespace="shop">
+
+	<insert id="insert" parameterType="bean.ProductVo">
+		insert into sproduct(pcode, pname, pprice, ppromotion, pstock, ppoint, psize, pcolor, pdate, pcontent, sprice, pgender, psaleck, attfileb, plike) 
+		values ( #{pCode} || seq_sc.nextval, #{pName}, #{pPrice}, #{pPromotion}, #{pStock}, #{pPoint}, #{pSize},  #{Tcolor}, sysdate, #{pContent}, #{pSale}, #{Tgender}, #{Psaleck}, #{attFileB},#{pLike})
+	</insert>
+	
+	<insert id="insert2" parameterType="bean.ProductVo">
+		insert into scategory(tgender, tbig, tsmall, tcode)
+		values (#{Tgender}, #{Tbig}, #{Tsmall}, #{pCode} || seq_sc.currval)
+	</insert>
+	
+	<insert id = "productSAtt" parameterType="bean.ProductVo">
+		 insert all
+		<foreach collection="list" item = "item">
+			into spfile(Fphoto, FCODE)
+			values(#{item.attFile, jdbcType=VARCHAR}, #{pCode} || seq_sc.currval)
+		</foreach>
+		select * from dual
+	</insert>
+	
+	<select id="view" parameterType="String" resultType="bean.ProductVo">
+		select *
+		from sproduct
+		where pcode = #{pCode}
+	</select>
+	
+	<select id="file" parameterType="String" resultType="String">
+		select FPHOTO from spfile where fcode = #{_parameter}
+	</select>
+	
+	<delete id="delete" parameterType = "bean.ProductVo">
+	
+	delete spro, scate from sproduct as spro 
+	join scategory as scate on spro.pcode = scate.tcode
+	where id = #{Tcode}
+	
+	</delete>
+	
+	<select id="modifyview" parameterType = "String" resultType="bean.ProductVo">
+		select * from sproduct	where pcode = #{_parameter}
+	</select>
+	
+	
+	<update id='update' parameterType = "bean.ProductVo">
+		update sproduct set pcode = #{pCode}, pname = #{pName}, pprice = #{pPrice}, 
+		ppromotion = #{pPromotion}, pstock = #{pStock},
+		psize = #{pSize}, pcolor = #{pColor}, pdate = #{pDate}, pcontent = #{pContent}, 
+		sprice = #{sPrice}, pgender = #{pGender}, psaleck = #{pSaleck}, attfileb = #{attFileB}
+		 
+		where pcode=#{pCode}
+	</update>
+	   <!-- 좋아요한 상품 slike에 insert -->
+   <insert id = "like_insert" parameterType="bean.SlikeVo">
+   insert into sLike(pCode, mId) values(#{pCode}, #{mId})
+   </insert>
+   
+   <!-- 해당 아이디에 좋아요한 코드 리스트 -->
+   <select id = "like" parameterType="String" resultType="String">
+   select pCode from sLike where mId = #{_parameter}
+   </select>
+	
+	<select id="info" parameterType="String" resultType="bean.ProductVo">
+	select * from sproduct where pcode = #{_parameter}
+	</select>
+</mapper>

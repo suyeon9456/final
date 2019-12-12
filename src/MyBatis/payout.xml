@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//en"
+      "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="payout">
+<select id="search" resultType="bean.CartVo" >
+select ccode, cname, cprice, cfprice, cpromotion,cpoint, cphoto from scart
+</select>
+
+<insert id="insert" parameterType="java.util.Map">
+insert all 
+<foreach collection="list" item	="item" separator="">
+ into sRecord (rserial, rcode, rname, rdate, rea, rrefund, rprice, rafter, rdelter, rid)
+values (#{item.rSerial}, #{item.rCode}, #{item.rName}, sysdate, #{item.rEa}, 0, #{item.rPrice}, #{item.rAfter}, #{item.rDelter}, #{item.rId})
+</foreach>
+select 1 from dual
+
+</insert>
+
+<delete id="delete" parameterType="java.util.Map">
+
+delete scart where ccode in(
+<foreach collection="list" item="item" separator=",">
+#{item.rCode} 
+</foreach>
+)and cid in(
+<foreach collection="list" item="item" separator=",">
+#{item.rId} 
+</foreach>
+)
+</delete>
+<insert id="address" parameterType="java.util.Map">
+ insert into sRock (kserial, kaddress, kpostal, kphone, ksname, kid)
+ values (#{item.kserial}, #{item.kaddress}, #{item.kpostal}, #{item.kphone}, #{item.ksname}, #{item.kid})
+</insert>
+</mapper>

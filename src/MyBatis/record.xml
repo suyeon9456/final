@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//en"
+      "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+      
+      
+<mapper namespace="record">
+
+  <select id="searchF" parameterType="String" resultType="bean.FileVo">
+     select pCode,attfileb as fphoto from sProduct where pCode = '${_parameter}'
+  </select>  
+      
+  <select id="totListSize" parameterType="bean.Param" resultType="Integer">
+      select count(*) cnt from sRecord
+      where rCode like '%${findStr}%'
+      	and rid = #{rId}
+   </select>    
+      
+      
+   <select id="search" parameterType="bean.Param" resultType="bean.RecordVo">
+      select * from (
+      select rownum rno, A.* from
+      (select
+   	  rcode,rPrice,rea,rSerial,rRefund,rAfter, rName, rDelter,
+      to_char(rDate,'rrrr-MM-dd') rDate
+      from sRecord
+      where rcode like '%${findStr}%'
+      and rid = #{rId} 
+      order by rDate desc) A
+      )where rno between
+      ${startNo} and ${endNo}
+   </select>
+   
+     <select id="atotListSize" parameterType="bean.Param" resultType="Integer">
+      select count(*) cnt from sRecord
+      where rCode like '%${findStr}%'
+      or rid like '%${findStr}%'
+   </select>    
+      
+      
+   <select id="asearch" parameterType="bean.Param" resultType="bean.RecordVo">
+      select * from (
+      select rownum rno, A.* from
+      (select
+   	  rcode,rPrice,rea,rSerial,rRefund,rAfter,rId, rDelter,
+      to_char(rDate,'rrrr-MM-dd') rDate
+      from sRecord
+      where rcode like '%${findStr}%'
+      or rid like '%${findStr}%'
+      order by rDate desc) A
+      )where rno between
+      ${startNo} and ${endNo}
+   </select>
+   
+   <select id = "afSearch1" resultType="Integer">
+      select count(*) cnt from sRecord
+      where rDelter = 1
+   </select>
+   
+   <select id = "afSearch2" resultType="Integer">
+      select count(*) cnt1 from sRecord
+      where rDelter = 2
+   </select>
+      
+   <select id = "daysSearch" parameterType="bean.Param" resultType="bean.RecordVo">
+          select rSerial,to_char(rDate,'rrrr-MM-dd') rDate, rcode,rPrice,rEa,rRefund,rAfter,rid from sRecord
+          where rcode like '%${findStr}%'
+         and rid like '%${findStr}%'
+         and rDate >= sysdate-7 
+         order by rdate desc
+         
+   </select>   
+      
+    <select id = "daymSearch" parameterType="bean.Param" resultType="bean.RecordVo">
+          select rSerial,to_char(rDate,'rrrr-MM-dd') rDate, rcode,rPrice,rEa,rRefund,rAfter,rid from sRecord
+          where rcode like '%${findStr}%'
+         and rid like '%${findStr}%'
+         and rDate >= to_char(add_months(sysdate,-1),'rrrr-MM-dd')
+         order by rdate desc
+         
+   </select>      
+      
+    <select id = "daytmSearch" parameterType="bean.Param" resultType="bean.RecordVo">
+          select rSerial,to_char(rDate,'rrrr-MM-dd') rDate, rcode,rPrice,rEa,rRefund,rAfter,rid from sRecord
+          where rcode like '%${findStr}%'
+         and rid like '%${findStr}%'
+         and rDate >= to_char(add_months(sysdate,-2),'rrrr-MM-dd') 
+         order by rdate desc
+         
+   </select>   
+   
+   <update id = "rcdUpdate1" parameterType="bean.RecordVo">
+         update sRecord
+         set rRefund = 1
+         where rSerial = #{rSerial} 
+         
+   </update>
+   
+   <update id = "rcdUpdate2" parameterType="bean.RecordVo">
+         update sRecord
+         set rRefund = 2
+         where rSerial = #{rSerial} 
+         
+   </update>
+   
+      <update id = "saleUpdate1" parameterType="bean.RecordVo">
+         update sRecord
+         set rDelter = 1
+         where rSerial = #{rSerial} 
+         
+   </update>
+   
+   <update id = "saleUpdate2" parameterType="bean.RecordVo">
+         update sRecord
+         set rDelter = 2
+         where rSerial = #{rSerial} 
+         
+   </update>
+      
+</mapper> 
+      
+      
+      
+      
+      

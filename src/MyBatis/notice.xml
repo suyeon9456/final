@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0 //en"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice">
+
+<!-- 	공지사항 상세조회 -->
+	<select id="viewQue" parameterType="member.Param" resultType="member.QuestionVo">
+		select * from sQuestion where qSerial = #{rSerial}
+	</select>
+
+	<!-- 1대1 insert -->
+	<insert id="question_insert" parameterType="member.QuestionVo" >insert
+		into sQuestion(qSerial, qId, qSubject, qContent, qDate)
+		values(seq_question.nextval, #{qId}, #{qSubject}, #{qContent},
+		sysdate) </insert>
+
+
+	<!-- 1대1 조회 -->
+	<select id="totListSizeQ" parameterType="member.Param"
+		resultType="Integer">
+		select count(*) cnt from sQuestion
+		where qid like #{rId}
+		and ( qSubject like '%${findStr}%'
+		or qContent like '%${findStr}%' )
+	</select>
+
+	<select id="searchQ" parameterType="member.Param"
+		resultType="member.QuestionVo">
+		select * from sQuestion where qId = #{rId}
+	</select>
+	
+<!-- 	관리자가 조회할때 -->
+	<select id="searchQa" parameterType="member.Param"
+		resultType="member.QuestionVo">
+		select * from sQuestion
+	</select>
+	
+
+<!-- 	공지사항 상세조회 -->
+	<select id="viewNot" parameterType="member.Param" resultType="member.NoticeVo">
+		select * from sNotice where nSerial = #{rSerial}
+	</select>
+
+	<!-- 공지사항 insert -->
+	<insert  id="notice_insert" parameterType="member.NoticeVo">
+		insert into sNotice(nSerial, nId, nSubject, nContent, nDate, nHit)
+		values(seq_notice.nextval, 'admin', #{nSubject}, #{nContent},	sysdate, 0)
+	</insert>
+	
+	<!-- 공지조회 -->
+	<select id="totListSize" parameterType="member.Param"
+		resultType="Integer">
+		select count(*) cnt from sNotice
+		where nid like '%${findStr}%'
+		or nSubject like '%${findStr}%'
+		or nContent like '%${findStr}%'
+	</select>
+
+	<select id="searchN" parameterType="member.Param"
+		resultType="member.NoticeVo">
+		select * from (
+		select rownum rno, A.* from
+		(select
+		nSerial,nid,nsubject,ncontent,nhit,
+		to_char(nDate,'rrrr-MM-dd') ndate
+		from snotice
+		where nid like '%${findStr}%'
+		or nsubject like '%${findStr}%'
+		or to_char(nDate,'rrrr-MM-dd') like '%${findStr}%'
+		order by nDate desc,nId asc) A
+		)where rno between
+		${startNo} and ${endNo}
+	</select>
+
+
+<select id="search" parameterType="member.Param" resultType="member.NoticeVo">
+      select * from (
+      select rownum rno, A.* from
+      (select
+      nSerial,nid,nsubject,ncontent,nhit,
+      to_char(nDate,'rrrr-MM-dd') ndate
+      from snotice
+      where nid like '%${findStr}%'
+      or nsubject like '%${findStr}%'
+      or to_char(nDate,'rrrr-MM-dd') like '%${findStr}%' 
+      order by nSerial asc) A
+      )where rno between
+      ${startNo} and ${endNo}
+   </select>
+   
+     <select id="searchh" resultType="member.QuestionVo">
+         select qserial,qorder,qid,qsubject,qcontent,to_char(qdate,'rrrr-MM-dd') qDate from sQuestion
+         order by qSerial asc
+   </select>
+<select id = "allqnasize" resultType = "Integer">
+     select count(*) cnt from sQuestion
+</select>
+
+
+<select id="allqna" resultType="member.QuestionVo">
+	      SELECT * FROM (SELECT ROWNUM rno, A.* FROM (SELECT LPAD(Qsubject, LEVEL*15, '/')
+      seq, qSerial, qId, qContent, qDate, qPserial, qOrder from squestion
+      start with qpserial is NULL connect by prior qserial = qpserial ORDER SIBLINGS by qserial desc) A) 
+       WHERE rno BETWEEN ${startNo} and ${endNo}
+</select>
+
+<select id="stay" resultType="Integer">
+select count(*) from srecord where RDELTER = 2 and Rrefund = 0 or RDELTER = 3 
+</select>
+
+<select id="refund" resultType="Integer">
+select count(*) from srecord where Rrefund = 1 or Rrefund = 2
+</select>
+
+<select id="ask" resultType="Integer">
+select count(*) from SQUESTION s left JOIN (select QpSERIAL as ori from SQUESTION where QPSERIAL is not null)A on  A.ori = s.qserial where QPSERIAL is null and A.ori is null
+</select>
+<select id="reple" parameterType="String" resultType="member.QuestionVo">
+ select * from squestion where qserial = #{_parameter}
+</select>
+
+
+<select id="repleP" parameterType="String" resultType="member.FileVo">
+select * from sqfile where hpserial = #{_parameter}
+</select>
+
+<insert id="answer" parameterType="member.QuestionVo" >
+insert into squestion(qserial, qid, qsubject, qcontent, qdate, qpserial, qorder) values(seq_quest.nextval, #{qId}, #{qSubject}, #{qContent}, sysdate, #{qPserial}, '관리자 답변')
+</insert>
+
+
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
