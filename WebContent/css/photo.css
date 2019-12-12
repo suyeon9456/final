@@ -1,0 +1,159 @@
+@charset "UTF-8";
+body {
+   
+   margin: 0px;
+
+}
+
+svg{
+width : inherit;
+height : inherit;
+opacity : 0.5;
+overflow : 
+}
+
+.b_2{
+   text-align: center;
+   margin:0 auto;
+}
+
+.photo {
+   width: 95%;
+   height: inherit;
+   display: inline-block;
+   margin:0 auto;
+   text-align: center;
+}
+
+.su_info1 .p_color_box{
+   margin:10px auto;
+   text-align: center;
+}
+
+.su_info1 .p_color{
+   width: 20px;
+   height:20px; 
+   display:inline-block;
+   overflow: hidden;
+}
+
+.b_2 .p_color_box{
+   margin:10px auto;
+   text-align: center;
+}
+
+.b_2 .p_color{
+   width: 20px;
+   height:20px; 
+   display:inline-block;
+   overflow: hidden;
+   border:1px solid #ccc;
+}
+
+.b_3 .p_color_box{
+   margin:10px auto;
+   text-align: center;
+}
+
+.b_3 .p_color{
+   width: 20px;
+   height:20px; 
+   display:inline-block;
+   overflow: hidden;
+   border:1px solid #ccc;
+}
+
+.p_photo1{
+   height : 571px;
+}
+
+.su_info1{
+   margin-top:30px;
+}
+
+.p_photo2 {
+   width: 90%;
+   height: 60%;
+   z-index : 0;
+   postion : absolute;
+   top : 0px;
+   text-align: center;
+   margin:0 auto;
+}
+
+.p_photo3 {
+   width: 90%;
+   height: 70%;
+   z-index : 0;
+   postion : absolute;
+   top : 0px;
+   text-align: center;
+   margin:0 auto;
+}    
+
+.photo1{
+width : 99%;
+height : 100%;
+z-index : 1;
+postion : relative;
+display : inline-block;
+   
+
+}
+
+.p_menu{
+ width : 80px;
+ height : 264px;
+ position : relative;
+ z-index : 2;
+ display : inline-block;
+ float : right; 
+ top : -220px;
+ left : 40px;
+
+}
+.p_info {
+   width: 90%;
+   height: 20%;
+   display: inline-block;
+   float : left;
+
+}
+
+.p_name {
+   width:90%;
+    text-align: center;
+    margin:0 auto;
+}
+
+.p_price {
+   width:90%;
+   font-weight : 800;
+   text-align: center;
+   margin:5px auto;
+}
+
+.p_color_in{
+
+width : 10px;
+height : 10px;
+border : 2px solid black;
+
+margin : 3px;
+margin-top : 25px; !important;
+
+display : inline-block;
+   
+}
+
+.icon div{
+   color : silver;
+   opacity : 0.8;
+   font-size : 1.5em;
+}
+
+.icon div:hover{
+   color : black;
+   opacity : 1;
+   
+}

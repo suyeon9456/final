@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+/* insert_result----------------------------------------------------------*/
+#realpay{
+   margin-top:100px;
+}
+
+#realpay .icon_box li.result_icon{
+   background-image: url(../mem_images/result.png);
+   color:#000;
+}
+
+#realpay .result_ic_text{
+   margin:0 auto;
+   text-align: center;
+   width: 60%;
+}
+
+#realpay .hh3{
+   margin:0px auto;
+   margin-top:20px;
+    padding-top: 10px;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #adadad;
+    background-color: #f3f3f3;
+    color: #333;
+    height: 30px;
+    text-align: left;
+    text-indent: 20px;
+    
+}
+
+#realpay .result_ic_text>h2{
+   font-weight: normal;
+}
+
+#realpay .result_content{
+   margin:0 auto;
+   margin-top:20px;
+   text-align: center;
+   width: 60%;
+}
+
+#realpay .result_content table{
+   height:150px;
+   width: 50%;
+   margin:0 auto;
+}
+
+#realpay>#btn_main_btn{
+   width: 60%;
+   margin:0 auto;
+   text-align: center;
+   margin-top:20px;
+}
+
+#realpay>#btn_main_btn input[type=button]{
+   width: 100px;
+   height: 35px;
+   border:1px solid #888;
+   background-color: #fff;
+}

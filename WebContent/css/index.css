@@ -1,0 +1,376 @@
+charset "UTF-8";
+
+@import
+	url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@font-face {
+	font-family: 'HangeulNuri-Bold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HangeulNuri-Bold.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+body {
+	font-size: 16px;
+	margin:0;
+	padding:0;
+}
+
+/* -----------------------------헤더고정------------------------- */
+.jbFixed {
+	position: fixed;
+	top: 0px;
+}
+
+.all_fixed {
+	text-align: center;
+	width: 100%;
+	z-index: 100;
+}
+
+#header {
+	background-color: #ffffff;
+	width: 100%;
+	height: 170px;
+	display: block;
+	min-height: 170px;
+	
+}
+
+#high_menu{
+width : 100%;
+height : 30px;
+background : rgb(196,30,32);
+font-size : 0.9rem;
+text-align : right;
+color : white;
+display : block;
+text-decoration: none;
+}
+
+#high_menu #rm_1 .rm{
+	display:inline-block;
+	width: 90px;
+	height:30px;
+	text-align: center;
+	line-height: 30px;
+	color: white;
+}
+
+
+#top_box{
+
+width : 100%;
+height : inherit;
+
+}
+#top_box #find_box{
+width : 20%;
+height : 140px;
+text-align : center;
+
+display: inline-block;
+float :left;
+}
+
+#find_box img{
+margin-top : 30px;
+width: 300px;
+}
+
+#logo {
+width : 60%;
+height : 140px;
+text-align : center;
+display : table;
+float : left;
+}
+
+#logo>#logo_box{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#logo>#logo_box>#logo_box_in{
+	height:40px;
+	position:relative;
+	display: inline-block;
+}
+
+#logo input[type="text"]{
+width : 450px;
+height : 40px;
+border : 2px solid rgb(196,30,32);
+border-radius : 30px 30px 30px 30px;
+}
+
+#logo input[type="button"]{
+position:absolute;
+width :40px;
+height : 40px;
+border : none;
+background : none;
+top:11px;
+right:0;
+}
+#left_menu{
+width : 20%;
+margin-top : 30px;
+heigth : 140px;
+overflow : hidden;
+text-align : center;
+display : inline-block;
+float : left;
+}
+
+/* --------------------------------------- 헤더절 ------ CSS for Index_Header---------------------------
+ -------------------------------------------헤더절이라고 ㅡㅡ -------------------------------------------- */
+#nav {
+	width: 100%;
+	min-width:460px;
+	min-height: 50px;
+	height:auto;
+	font-size: 1rem;
+	text-align: center;
+	border-bottom: 2px solid #c41e20;
+	box-sizing: border-box;
+	cursor: pointer;
+	background-color: #ffffff;
+}
+
+.gender {
+	width: 200px;
+	height: 50px;
+	display: inline-block;
+	float: left;
+	line-height: 50px;
+}
+
+.nav {
+	width: 150px;
+	height: 50px;
+	float: left;
+	line-height: 50px;
+}
+
+.nav:hover {
+	opacity: 0.5;
+}
+
+#sel_man {
+	min-width:460px;
+	display: flex;
+	margin:0 auto;
+	text-align: center;
+	flex-wrap:wrap;
+	justify-content: center;
+	align-items: center;
+	align-content:center;
+	display: inline-block;
+}
+
+#gender_man {
+	margin: 0;
+	padding: 0;
+	background-color: white;
+	color: black;
+}
+
+#gender_man>.nav::before{
+	border-right: 1px solid #eee;
+}
+
+
+#sel_woman {
+	height: 50px;
+	display: none;
+	margin:0 auto;
+	text-align: center;
+}
+#gender_woman {
+	height:50px;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+#nav a{
+	color:black;
+}
+
+/* ----------------------------------------네비게이션 절 -------------- CSS for Index_nav------------------
+ -------------------------------------------네비게이션 절이라고 ㅡㅡ ----------------------------------------- */
+  #slideSize{
+                   width : 80%;
+                   height : 400px;
+                   background-color : rgb(215,230,28);
+                   display : block;
+                   margin: 0 auto;
+                   }
+
+/* -----------------------------------슬라이드액션------------------------ */
+/*GLOBALS*/
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#slider-wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#slider-wrap ul#slider {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#slider-wrap ul#slider li {
+    float: left;
+    position: relative;
+    width: 600px;
+    height: 400px;
+}
+
+#slider-wrap ul#slider li>div {
+    position: absolute;
+    top: 20px;
+    left: 35px;
+}
+
+#slider-wrap ul#slider li>div h3 {
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+#slider-wrap ul#slider li>div span {
+    font-size: 21px;
+}
+
+#slider-wrap ul#slider li img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/*btns*/
+.slider-btns {
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    top: 50%;
+    margin-top: -25px;
+    line-height: 57px;
+    text-align: center;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 90;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+    -webkit-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+}
+
+.slider-btns:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+#next {
+    right: -50px;
+    border-radius: 7px 0px 0px 7px;
+    color: #eee;
+}
+
+#previous {
+    left: -50px;
+    border-radius: 0px 7px 7px 7px;
+    color: #eee;
+}
+
+#slider-wrap.active #next {
+    right: 0px;
+}
+
+#slider-wrap.active #previous {
+    left: 0px;
+}
+
+/*bar*/
+#slider-pagination-wrap {
+    min-width: 20px;
+    margin-top: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 15px;
+    position: relative;
+    text-align: center;
+}
+
+#slider-pagination-wrap ul {
+    width: 100%;
+}
+
+#slider-pagination-wrap ul li {
+    margin: 0 4px;
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.5;
+    position: relative;
+    top: 0;
+}
+
+#slider-pagination-wrap ul li.active {
+    width: 12px;
+    height: 12px;
+    top: 3px;
+    opacity: 1;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 0px;
+}
+
+/*ANIMATION*/
+#slider-wrap ul,
+#slider-pagination-wrap ul li {
+    -webkit-transition: all 0.3s cubic-bezier(1, .01, .32, 1);
+    -o-transition: all 0.3s cubic-bezier(1, .01, .32, 1);
+    transition: all 0.3s cubic-bezier(1, .01, .32, 1);
+}
+
+/*---------------------------------------------슬라이드 절 ------------------------------------------------- */
+
+
+
+#content {
+	width: 100%;
+	height: auto;
+	margin-top:60px;
+}
+
+
+/* ---------------------------------------------------article 절 ---------------------------------------------------------
+-----------------------------------------아티클 절이라고 ㅡㅡ -------------------------------------------------- */
+#footer {
+	width: 100%;
+	min-height: 200px;
+	height: auto;
+}
+
+#wrap{
+	min-height : 1000px;
+	height:auto;
+	margin-bottom: 10px;
+}

@@ -1,0 +1,46 @@
+@charset "UTF-8";
+#find_id h2{text-align:  center;}
+
+#find_id #req_id{
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+}
+#find_id #req_id input[type=text]{
+	width: 420px;
+	border: 0 solid white;
+	border-bottom: 1px solid #888;
+	margin-bottom: 10px;
+	font-size: 15px;
+	height: 30px;
+}
+#find_id #req_id input[type=submit]{
+   width: 200px;
+   border:1px solid #888;
+   background-color: #fff;
+   cursor: pointer;
+   height:35px;
+}
+
+#find_pwd h2{text-align:  center;}
+
+#find_pwd #req_pwd{
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+}
+#find_pwd #req_pwd input[type=text]{
+	width: 420px;
+	border: 0 solid white;
+	border-bottom: 1px solid #888;
+	margin-bottom: 10px;
+	font-size: 15px;
+	height: 30px;
+}
+#find_pwd #req_pwd input[type=submit]{
+   width: 200px;
+   border:1px solid #888;
+   background-color: #fff;
+   cursor: pointer;
+   height:35px;
+}

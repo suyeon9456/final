@@ -1,0 +1,197 @@
+@charset "UTF-8";
+#login h2{
+   text-align: center;
+   margin:20px auto;
+}
+   
+#login h3{
+   text-align: center;
+   margin:10px auto;
+   margin-bottom:20px;
+}
+
+#login p{
+   font-size:14px;
+}
+
+#login #any_login{
+   width: 60%;
+   margin: 40px auto;
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+#any_login #btnLogin, #any_login #btnOrderS{
+   width: 100%;
+   border:1px solid #888;
+   background-color: #fff;
+   cursor: pointer;
+   height:35px;
+}
+
+#any_login input[type=button]{
+   width: 150px;
+   height:35px;
+   border:1px solid #888;
+   background-color: #fff;
+   cursor: pointer;
+}
+
+#any_login input[type=text]{
+   width: 320px;
+   border: 0 solid white;
+   border-bottom: 1px solid #888;
+   margin-bottom: 10px;
+   font-size: 15px;
+   height: 30px;
+}
+#any_login input[type=password]{
+   width: 320px;
+   border: 0 solid white;
+   border-bottom: 1px solid #888;
+   margin-bottom: 10px;
+   font-size: 15px;
+   height: 30px;
+}
+#member_login #findbtn{
+   display: flex;
+   justify-content: space-between;
+}
+#member_login #checks{
+   margin:10px auto;
+   display: flex;
+   justify-content: space-between;
+}
+#any_login #btnsns{
+   margin-top:50px;
+   justify-content: space-between;
+}
+#login hr{
+   margin:0 auto;
+   text-align:center;
+   width: 60%
+}
+
+
+#login #sign_up{
+      width: 60%;
+   margin: 0 auto;
+}
+#login #sign_up #sign_up_content{
+   display: flex;
+   justify-content: space-between;
+}
+#login #sign_up #btnSignup{
+   width: 200px;
+   height : 40px;
+   border: 1px solid #ccc;
+   background-color: #ccc; 
+   
+}
+
+#login #merit{
+   width: 60%;
+   margin: 0 auto;
+}
+#login #merit #merits{
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   align-content: space-around;
+   
+}
+
+#login #social{
+   display: inline-block;
+}
+
+#login #kaCustomBtn{
+   display:block;
+   box-sizing:border-box;
+   display:block;
+   margin:10px auto;
+   background-color: #f7e317;
+   width: 320px;
+   height:40px;
+   white-space: nowrap;
+   text-align:left;
+   border:1px solid #f0d909;
+   border-radius:3px;
+   overflow: hidden;
+}
+
+#login #kaCustomBtn .k_icon{
+   margin-top:-2px;
+   margin-left:4px;
+   display:inline-block;
+   background-size:contain;
+   width:40px;
+   height:40px;
+   background-image: url("../css/kakao_login.png");
+   float: left;
+}
+
+#login #kaCustomBtn #k_a{
+   color:#3c1e1e;
+   font-size:17.2px;
+   font-weight:bold;
+   display:inline-block;
+   width:280px;
+   height:40px;
+   text-align: center;
+   line-height: 37px;
+}
+
+#login #customBtn{
+   box-sizing:border-box;
+   display:block;
+   margin:10px auto;
+   background-color: #fff;
+   width: 320px;
+   height:40px;
+   white-space: nowrap;
+   text-align:left;
+   border:1px solid #ccc;
+   border-radius:3px;
+   overflow: hidden;
+}
+
+#login #customBtn:hover{
+   cursor: pointer;
+}
+
+#login #customBtn .icon{
+   margin-top:6px;
+   margin-left:12px;
+   display:inline-block;
+   background-size:contain;
+   width:25px;
+   height:25px;
+   background-image: url("https://developers.google.com/identity/images/g-logo.png?hl=ko");
+   float: left;
+}
+
+#login #customBtn #a{
+   color:#1f1f1f;
+   font-size:17.2px;
+   font-weight:bold;
+   display:inline-block;
+   width:278px;
+   height:40px;
+   text-align: center;
+   line-height: 37px;
+}
+
+.merit_con{
+   width: 160px;
+   border: 1px solid #ccc;
+   text-align: center;
+   margin: 5px;
+   padding-top: 40px;
+   padding-bottom: 40px;
+   cursor: pointer;
+}
+.merit_con a{
+   text-decoration: none;
+   color: #333;
+}

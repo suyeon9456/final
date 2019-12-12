@@ -1,0 +1,107 @@
+@charset "UTF-8";
+body {
+   font-family:'ON-IGothic';
+   font-size: 16px;
+}
+
+h2 {
+width: 80%;
+height : auto;
+margin : 0 auto;
+text-align:center;
+font-size: 2em;
+}
+
+h2 span{
+color : #e44e4e;
+}
+
+/*
+#h2middle{
+text-align : right;
+}
+*/
+#h2last{
+text-align : center; 
+}
+
+   
+}
+#covernew{
+margin-top : 30px;
+width : 80%;
+height : fit-content;
+margin : 0 auto;
+}
+
+
+.n_1 {
+margin-top : 30px;
+   width: 100%;
+   height: 630px;
+   background: cyan;
+   display: inline-block;
+   overflow: hidden;
+   margin : 0 auto;
+   position : relative;
+}
+
+.product_price{
+margin-left : 140px;
+text-align : center;
+font-size : 2rem;
+font-weight: bold;
+
+}
+.product_more_info{
+margin-left : 160px;
+}
+
+#bestproduct {
+   width: 1400px;
+   height: auto;
+   min-height:752px;
+   margin : 30px auto;
+}
+
+.b_1 {
+   width: 560px;
+   height: 713px;
+   display: inline-block;
+   overflow: hidden;
+   float: left;
+}
+
+.b_2 {
+   width: 280px;
+   height: 356px;
+   display: inline-block;
+   overflow: hidden;
+   float: left;
+}
+
+.b_3 {
+   width: 280px;
+   height: 376px;
+   display: inline-block;
+   overflow: hidden;
+   float: left;
+   text-align: center;
+   margin:0 auto;
+}
+#commonproduct {
+   width: 1400px;
+   min-height:752px;
+   height: auto;
+   margin : 30px auto;
+}
+
+/* ---------------------------------------------------article 절 ---------------------------------------------------------
+-----------------------------------------아티클 절이라고 ㅡㅡ -------------------------------------------------- */
+#footer {
+   width: 100%;
+   height: 300px;
+}
+
+/*-----------------------------------------------------footer절--------------------------------------------------------
+-------------------------------------------------footer 절이라고 ㅡㅡ ------------------------------------------------ */

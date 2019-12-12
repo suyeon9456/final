@@ -1,0 +1,660 @@
+@charset "UTF-8";
+
+a{
+   text-decoration: none;
+}
+
+/* icon_box 클래스 공통 css----------------------------------------------------------*/
+.icon_box{
+   text-align: center;
+   width: 60%;
+   min-width: 450px;
+   margin:0 auto;
+}
+
+.icon_box h2{
+   margin:20px auto;
+}
+
+.icon_box ol{
+   margin-top:20px;
+   padding:0;
+}
+
+.icon_box li{
+   display: inline-block;
+   background-position: center top;
+   background-repeat: no-repeat; 
+   font-size: 14px;   
+   width: 100px;
+   height: 100px;
+   padding: 58px 40px 0;
+   vertical-align: middle;
+   font-weight: 700;
+   color:#888888;
+   position: relative;
+}
+
+.icon_box li::before{
+   display: block;
+    position: absolute;
+    left: -49px;
+    top: 18px;
+    width: 90px;
+    height: 1px;
+    background: #dbdbdb;
+    content: '';
+}
+
+.icon_box li:first-child::before{
+   content: none;
+}
+   
+
+.icon_box li.agree_icon{
+   background-image: url(../mem_images/agree_g.png);
+}
+
+.icon_box li.insert_icon{
+   background-image: url(../mem_images/insert_g.png);
+
+}
+
+.icon_box li.result_icon{
+   background-image: url(../mem_images/result_g.png);
+
+}
+
+/* insert_agree----------------------------------------------------------*/
+
+#insert_agree .icon_box li.agree_icon{
+   background-image: url(../mem_images/agree.png);
+   color:#000;
+}
+
+
+#insert_agree #agree_contents{
+   margin:0 auto;
+   text-align: center;
+}
+
+#insert_agree #agree_contents iframe{
+   width:60%;
+   min-width:450px;
+    height: 520px;
+    padding: 25px;
+    border: 1px solid #dbdbdb;
+}
+
+#insert_agree #agree_contents .a_check{
+   margin:20px 0;
+}
+
+#insert_agree #agree_btn{
+   margin:0 auto;
+   text-align: center;
+}
+
+#insert_agree #agree_btn .btn_box{
+   display:inline-block;
+   width: 200px;
+   height:35px;
+   background-color: #000;
+}
+
+#insert_agree #agree_btn .btn_box a{
+   color:#fff;
+   font-size: 17px;
+   line-height: 30px;
+}
+
+/* insert_agree의 이용약관 css----------------------------------------------------------*/
+#use_agree, #privacy_agree{
+   width: 100%;
+}
+
+#use_agree h3, #privacy_agree h3{
+   font-size: 17px;
+   color:#999999;
+}
+
+#use_agree pre, #privacy_agree pre{
+   font-size: 12px;
+   color: #808080;
+   line-height:160%;
+   word-wrap: break-word;
+   white-space: pre-wrap;
+ }
+
+/* insert----------------------------------------------------------*/
+
+#insert .icon_box li.insert_icon{
+   background-image: url(../mem_images/insert.png);
+   color:#000;
+}
+
+#insert #insert_form{
+   width: 60%;
+   min-width: 450px;
+   margin :0 auto;
+   text-align: center;
+}
+
+#insert #insert_form div{
+   max-width:600px;
+   margin:5px auto;
+   text-align: left;
+}
+
+#insert #insert_form .insert_btns{
+   text-align: center;
+}
+
+#insert #insert_form div>label{
+   display: inline-block;
+   width: 150px;
+   height:35px;
+   font-size: 14px;
+   text-align: left;
+   margin:5px 0;
+   line-height: 35px;
+}
+
+#insert #insert_form div>label>span{
+   color:#cf591f;
+}
+
+#insert #insert_form div>input{
+   display: inline-block;
+   width: 300px;
+   height: 35px;
+   border:0;
+   border-bottom: 1px solid #ccc;
+}
+
+#insert #insert_form div input[type=button]{
+   width: 100px;
+   border:1px solid #888;
+   background-color: #fff;
+}
+
+#insert #insert_form div input[type=radio]{
+   width: 17px;
+   height: 17px;
+}
+
+#insert #insert_form .result_txt{
+   display:inline-block;
+   width: 300px;
+   color:#cf591f;
+   font-size: 12px;
+   text-align: left;
+}
+
+
+
+/* insert_result----------------------------------------------------------*/
+#insert_result .icon_box li.result_icon{
+   background-image: url(../mem_images/result.png);
+   color:#000;
+}
+
+#insert_result .result_ic_text{
+   margin:0 auto;
+   text-align: center;
+   width: 60%;
+}
+
+#insert_result .result_ic_text>h2{
+   font-weight: normal;
+}
+
+#insert_result .result_content{
+   margin:0 auto;
+   margin-top:20px;
+   text-align: center;
+   width: 60%;
+   border:1px solid #ccc;
+}
+
+#insert_result .result_content table{
+   height:150px;
+   width: 50%;
+   margin:0 auto;
+}
+
+#insert_result>#btn_main_btn{
+   width: 60%;
+   margin:0 auto;
+   text-align: center;
+   margin-top:20px;
+}
+
+#insert_result>#btn_main_btn input[type=button]{
+   width: 100px;
+   height: 35px;
+   border:1px solid #888;
+   background-color: #fff;
+}
+
+/* mypage----------------------------------------------------------*/
+#mypage h2{
+   margin:20px auto;
+   text-align: center;
+}
+
+#mypage .mypage_box{
+   width: 60%;
+   margin: 0px auto;
+   padding:20px 0;
+   text-align: center;
+   min-width: 450px;
+   border-bottom: 1px solid #dbdbdb;
+}
+
+#mypage .mypage_box:last-child{
+   border:0;
+}
+
+#mypage .mypage_box #left{
+   display:inline-block;
+   width:50%;
+   height:80px;
+   text-align:center;
+   float: left;
+   overflow: hidden;
+   font-size: 14px;
+   min-width: 450px;
+   line-height: 80px;
+}
+
+#mypage .mypage_box #right{
+   display:inline-block;
+   width:50%;
+   text-align:right;
+   overflow: hidden;
+   font-size: 14px;
+}
+
+#mypage .mypage_box #right>table{
+   width: 500px;
+   height:80px;
+   text-align: center;
+   border:1px solid #d5d5d5;
+}
+
+#mypage .mypage_box #right>table thead tr{
+   border-bottom:1px solid #c41e20;
+   height: 40px;
+   background-color: #e4e4e4;
+   color:#808080;
+   font-weight: bold;
+}
+
+
+#mypage .mypage_box>h3{
+   text-align: center;
+   font-size: 16px;
+}
+
+#mypage .mypage_box>#state table{
+   margin:10px auto;
+   text-align: center;
+   border:1px solid #c41e20;
+}
+
+#mypage .mypage_box>#state table .del_box_tit{
+   border-bottom:1px solid #c41e20;
+   height: 40px;
+   background-color: #e44e4e;
+   color:#fff;
+   font-weight: bold;
+}
+
+#mypage .mypage_box>#state .del_box{
+   width: 200px;
+   height:100px;
+   font-size: 50px;
+   font-weight: bold;
+}
+
+#mypage .mypage_box>#state>.state_delivery{
+   width: 75%;
+   min-width:450px;
+   float: left;
+   font-size: 14px;
+}
+
+#mypage .mypage_box>#state>.state_return{
+   width: 25%;
+   text-align: right;
+   font-size: 14px;
+}
+
+#mypage .mypage_box .item{
+   margin:0 auto;
+   display: flex;
+   flex-wrap:wrap;
+   justify-content:center;
+   width: 100%;
+   max-width: 1000px;
+}
+
+#mypage .mypage_box .item>a{
+   border:1px solid #ccc;
+   padding:10px;
+   margin:5px;
+   color:black;
+}
+
+#mypage .mypage_box .item>a>div{
+   width: 178px;
+}
+
+/* 1대 1문의----------------------------------------------------------*/
+#mypage_qna>#qna_top{
+   margin: 20px auto;
+   width:60%;
+   min-width:460px;
+   height: auto;
+   margin:0 auto;
+   text-align: center;
+}
+#mypage_qna>#qna_top>h2{
+   width:75%;
+   display:inline-block;
+   text-align: left;
+   margin-top:20px;
+}
+
+#mypage_qna>#qna_top>ul{
+   width:20%;
+   list-style: none;
+   font-weight: normal;
+   font-size: 17px;
+   display: inline-block;
+   text-align: right;
+   padding:0;
+   margin:0;
+}
+
+.tbl_qna{
+   width: 60%;
+   min-width:460px;
+   margin: 0 auto;
+   text-align: center;
+}
+#mypage_qna>.tbl_qna>thead>tr>th{
+   border-top:1px solid #333;
+   padding:12px 0 16px;
+   border-bottom: 1px solid #e9e9e9;
+   color: #404040;
+    font-family: Malgun Gothic, '맑은 고딕';
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+#mypage_qna>.tbl_qna>tbody>tr{
+   height:20px;
+   font-size: 13px;
+}
+
+#mypage_qna>.tbl_qna>tbody>tr:hover{
+   background-color: #f9f9f9;
+}
+
+
+#mypage_qna>.tbl_qna>tbody>tr>td{
+   border-bottom: 1px solid #e9e9e9;
+   height:30px;
+}
+
+#mypage_qna>#btns{
+   width: 60%;
+   min-width: 460px;
+   margin:10px auto;
+   text-align: center;
+}
+
+#mypage_qna #insert_btn_box{
+   width: 60%;
+   min-width: 460px;
+   margin:0 auto;
+   text-align: right;
+}
+#mypage_qna #insert_btn_box>.btnInsert{
+   background-color: black;
+   color: white;
+   width: 200px;
+   height:30px;
+   border:0;
+   cursor: pointer;
+   margin-top:20px;
+}
+
+#mypage_qna>#btns>input[type = "button"]{
+   background-repeat:no-repeat;
+   width: 24px;
+    height: 24px;
+    border:0;
+    background-color:transparent; 
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* 1대 1문의----------------------------------------------------------*/
+#mypage_qna_insert .tbl_qna tr:first-child td
+,#mypage_qna_insert .tbl_qna tr:first-child th{
+   border-top:1px solid #333;
+   border-bottom:1px solid #e9e9e9;
+}
+
+#mypage_qna_insert .tbl_qna tr td,
+#mypage_qna_insert .tbl_qna tr th{
+   border-bottom: 1px solid #e9e9e9;
+}
+
+.tbl_qna tr{
+   height:50px;
+}
+
+#mypage_qna_insert .tbl_qna select{
+   height: 32px;
+   width: 20%;
+   min-width: 75px;
+}
+
+#mypage_qna_insert .tbl_qna input[type = "text"]{
+   width:70%;
+   height: 25px;
+   min-width: 100px;
+}
+
+#mypage_qna_insert .tbl_qna textarea{
+   width: 90%;
+   min-width: 150px;
+   height:500px;
+   overflow-y:auto; 
+   margin:10px 0;
+}
+
+#mypage_qna_insert .tbl_qna input[type = "file"]{
+   width: 90%;
+   min-width: 150px;
+}
+
+#mypage_qna_insert #photo_show{
+   width: 60%;
+   min-width: 460px;
+   height: 170px;
+   overflow-x:hidden;
+   margin:0 auto;
+   border:1px solid #e9e9e9;
+}
+#mypage_qna_insert #existing_photo{
+   width: 60%;
+   min-width: 460px;
+   height: 170px;
+   overflow-x:hidden;
+   margin:0 auto;
+   border:1px solid #e9e9e9;
+}
+
+#mypage_qna_insert #photo_show .image_box{
+   margin:5px;
+   display: inline-block;
+   position: relative;
+   width: 120px;
+   height:160px;
+}
+
+#mypage_qna_insert #photo_show .image_box>input[type = "button"]{
+   display: inline-block;
+   position: absolute;
+   bottom:0;
+   right:0;
+   border:0;
+}
+#mypage_qna_insert #existing_photo input[type = "button"]{
+   display: inline-block;
+   position: absolute;
+   bottom:0;
+   right:0;
+   border:0;
+}
+
+#mypage_qna_insert #insert_btns{
+   width: 60%;
+   min-width: 460px;
+   margin:0 auto;
+   text-align: right;
+}
+
+#mypage_qna_insert #insert_btns>input[type = "button"]{
+   background-color: black;
+   color: white;
+   width: 200px;
+   height:30px;
+   border:0;
+}
+/* my_like----------------------------------------------------------*/
+#my_like{
+   width: 1100px;
+   margin:0 auto;
+   text-align: center;
+}
+
+#my_like #btns input[type=text]{
+   height:29px;
+   margin-right:10px;
+   float: left;
+}
+
+#my_like #btns input[type=submit]{
+   height:32px;
+}
+
+#my_like #title{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      border-top: 1px solid #adadad;
+      background-color: #f3f3f3;
+      text-align: center;
+}
+
+#my_like .like_code{
+   display:inline-block;
+   width: 560px;
+}
+
+#my_like .like_price{
+   display:inline-block;
+   width: 310px;
+
+}
+
+#my_like .like_sale{
+   display:inline-block;
+   width: 170px;
+}
+
+#my_like .like_list{
+   height: 130px;
+   padding-top:9px;
+   border-bottom: 1px solid #ddd;
+   box-sizing: border-box;
+   font-size: 13px;
+   color: #333;
+   text-align: center;
+   overflow: hidden;
+}
+
+#my_like .like_list .like_code{
+   margin:0 auto;
+   text-align: left;
+   float: left;
+}
+
+#my_like .like_list .like_code:hover{
+   cursor: pointer;
+}
+
+#my_like .like_list .like_code img{
+   margin-left:20px;
+   width: 110px;
+   height: 110px;
+   float: left;
+}
+#my_like .like_list .like_code span{
+   
+   margin-left:10px;
+   height: 83px;
+   line-height: 110px;
+}
+
+#my_like .like_list .like_sale input[type=button]{
+   width: 120px;
+   height:30px;
+   background-color: #fff;
+   border:0;
+   border:1px solid #ccc;
+   margin:2px auto;
+}
+
+#my_like .like_list .like_price{
+   line-height: 110px;
+   vertical-align: middle;
+   float: left;
+   width: 350px;
+}
+
+#pop{
+  width:400px; height:300px; background:#ffffff; color:#000000;
+  position:absolute; top:30%; left:40%; text-align:center;
+  border:2px solid #ccc; display:none;
+}
+
+#pop p{
+   font-size: 15px;
+}
+
+#pop img{
+margin-top:10%
+}
+
+#pop #cart_btns{
+   margin-top:30px;
+}
+#pop input[type=button]{
+   width:150px;
+   height:40px;
+    background-color: #000000;
+    background-color: #fff;
+    border:0;
+    border:1px solid #ccc;
+    font-size: 15px;
+
+}

@@ -1,0 +1,225 @@
+@charset "UTF-8";
+
+#customer_view{
+   width: 1100px;
+   margin:0 auto;
+   text-align: center;
+}
+
+#customer_view h2{
+   text-align: left;
+   font-family: 'Nanum Gothic';
+   margin-bottom: 8px;
+}
+
+#customer_view h3{
+   text-align: left;
+   font-family: 'Nanum Gothic';
+   font-size: 20px;
+   margin-bottom: 15px;
+}
+
+#customer_view #discount_box{
+   width: 90px;
+   height: 71px;
+   display: inline-block;
+   text-align: center;
+   background-image: url("http://spao.elandmall.com/20191105101901/images/pcweb/goods/bg_sale_flag.gif");
+   color:#fff;
+   font-size: 32px;
+   
+}
+#relative {
+   margin-top:20px;
+   height: auto;
+   display: flex;
+   font-size:20px;
+   margin-bottom: 170px;
+}
+
+#relative input[type="text"]{
+font-size:35px;
+border:0;
+display:inline-block;
+}
+#d1{
+width: 520px;
+height: 520px;
+}
+#d2{
+    width: 500px;
+    height: 100px;
+    display:flex;
+   width: 520px;
+   height:90px;
+   margin:0 auto;
+   box-sizing: border-box;
+   padding:10px;
+   padding-left: 0;
+   text-align: center;
+   
+}
+
+#d2 .dd{
+   display:inline-block;
+   float: left;
+   margin:0 auto;
+   text-align: center;   
+}
+#d3{
+   box-sizing:border-box;
+     width: 580px;
+     position: relative;
+     padding-top:20px;
+     padding-left:20px;
+}
+
+#d3 table{
+   font-family:'Nanum Gothic';
+   
+   font-size: 13px;
+   width: 500px;
+   border:0;
+   color:#333;
+}
+
+#d3 table tr{
+   height: 30px;
+}
+
+#d3 table td{
+   border:0;
+}
+
+#d3 table .tit{
+   font-weight: bold;
+   width: 120px;
+   height:40px;
+}
+
+#d3 #discount_box{
+   position: absolute;
+   top:-22px;
+   right:0;
+}
+#d3 #mdmd{
+   margin-top:20px;
+}
+
+#d3 #mdmd .btnconts{
+   width: 160px;
+   height: 53px;
+   background-color: #fff;
+   border:0;
+   font-size: 17px;
+   font-weight:bold;
+   color:#888;
+   line-height: 40px;
+   border:1px solid #999;
+}
+#d4{
+padding : 10px;
+}
+
+#d4 p{
+   margin:0 auto;
+   text-align: center;
+}
+#hash div{
+display:inline-block;
+width:100px;
+height:34px;
+border: 1px solid #aaaaaa;
+margin-left:10px;
+}
+
+#pop{
+  width:400px; height:300px; background:#ffffff; color:#000000;
+  position:absolute; top:30%; left:40%; text-align:center;
+  border:2px solid #ccc; display:none;
+}
+
+#pop p{
+   font-size: 15px;
+}
+
+#pop img{
+margin-top:10%
+}
+
+#pop #cart_btns{
+   margin-top:30px;
+}
+#pop input[type=button]{
+   width:150px;
+   height:40px;
+    background-color: #000000;
+    background-color: #fff;
+    border:0;
+    border:1px solid #ccc;
+    font-size: 15px;
+
+}
+/*-------------------------------------------------*/
+
+/*-------------------------------------------------*/
+
+#relative #select_m{
+   background:#fff;
+   height:90px;
+   width:500px;
+   overflow-y:auto;
+   font-size:15px;
+}
+
+#relative #select_m>div{
+   background-color : #f3f3f3;
+   font-size: 13px;
+   min-height: 43px;
+   line-height: 43px;
+   font-weight: bold;
+}
+
+#relative #select_m input[type=text]{
+   font-size: 13px;
+   width: 80px;
+   background: inherit;
+   font-weight: bold;
+}
+
+#relative #select_m .ea_ss{
+	width: 30px;
+	text-align: center;
+}
+
+#relative #select_m input[type=button]{
+   width: 20px;
+   height: 20px;
+   background-color: #fff;
+   border:0;
+   border:1px solid #ccc;
+}
+
+#relative #select_m hr{
+   width: 0;
+}
+
+#relative #tot{
+   width: 500px;
+   text-align: right;
+   margin:10px auto;
+}
+
+#relative #tot input[type=text]{
+   font-size: 20px;
+   font-weight: 800;
+   color: #333;
+   font-family: 'Nanum Gothic',sans-serif;
+   width:130px;
+   text-align: right;
+   height:50px;
+   line-height: 50px;
+}
+#relative #tot #price_s{
+   font-size: 35px;
+}

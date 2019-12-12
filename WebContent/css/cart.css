@@ -1,0 +1,184 @@
+@charset "UTF-8";
+
+#payout{
+   width: 1100px;
+   margin:0 auto;
+   text-align: center;
+}
+
+#payout h1{
+   margin:20px auto;
+}
+
+#payout ul{
+   font-size: 14px;
+   text-align: left;
+   color:#333;
+   margin:10px auto; 
+}
+
+#payout #payinfo{
+   font-size:17px;
+   background: #494949;
+   text-align: left;
+   color:white;
+   font-weight: bold;
+   height: 40px;
+   text-indent: 10px;
+   line-height: 38px;
+}
+
+#payout #paylist #paylist_header{
+   height: 40px;
+    border-top: 1px solid #adadad;
+    border-bottom: 1px solid #ddd;
+    background: #f3f3f3;
+    font-weight: 800;
+    color: #333;
+}
+
+#payout #paylist #paylist_header .check_box{
+   width: 150px;
+   float: left;
+   line-height: 40px;
+}
+
+#payout #paylist #paylist_header .item_name{
+   width: 390px;
+   float:left;
+   line-height: 40px;
+}
+
+#payout #paylist #paylist_header .item_price{
+   width: 150px;
+   float:left;
+   line-height: 40px;
+}
+#payout #paylist #paylist_header .item_ea{
+   width: 80px;
+   float:left;
+   line-height: 40px;
+}
+
+#payout #paylist #paylist_header .promotion{
+   width: 100px;
+   float:left;
+   line-height: 40px;
+}
+
+#payout #paylist #paylist_header .point{
+   width: 80px;
+   float:left;
+   line-height: 40px;
+}
+
+#payout #paylist #paylist_header .cal_price{
+   width: 150px;
+   float:left;
+   line-height: 40px;
+}
+
+#payout #paylist .data{
+   border-bottom: 1px solid #ddd;
+   height:110px;
+   overflow: hidden;
+}
+
+#payout .check_box input[type=button]{
+   width: 80px;
+   background-color: #fff;
+   border:0;
+   border:1px solid #ccc;
+   height: 30px;
+}
+
+#payout .check_box{
+   width: 150px;
+   float: left;
+   line-height: 100px;
+   vertical-align: middle;
+}
+
+#payout .product_img {
+   float: left;
+   width: 390px;
+   text-align: left;
+   line-height: 100px;
+   vertical-align: middle;
+}
+
+#payout .product_img .productimg{
+   width: 85px;
+   height:85px;
+   line-height: 100px;
+   vertical-align: middle;
+}
+
+#payout .item_price{
+   width: 150px;
+   float: left;
+   line-height: 100px;
+   vertical-align: middle;
+}
+
+#payout .item_ea{
+   width: 80px;
+   float: left;
+   line-height: 100px;
+   vertical-align: middle;   
+}
+
+#payout .item_ea input[type=button]{
+   width: 18px;
+   height: 18px;
+   background-color: #fff;
+   border:1px solid #ccc;
+   color:#666;
+}
+
+#payout .promotion{
+   width: 100px;
+   float: left;
+   line-height: 100px;
+   vertical-align: middle;
+}
+
+#payout .point{
+   width: 80px;
+   float: left;
+   line-height: 100px;
+   vertical-align: middle;
+}
+
+#payout .cal_price{
+   width: 150px;
+   float: left;
+   line-height: 100px;
+   vertical-align: middle;
+}
+
+#payout #info_zone{
+   font-size: 13px;
+   color:#666;
+   height: 80px;
+   line-height:80px;
+   border-bottom: 1px solid #494949;
+}
+
+#payout #info_zone span{
+   font-size: 20px;
+   color:#333;
+   font-weight: 800;
+}
+
+#payout #agree_zone{
+   margin:20px auto;
+} 
+
+#payout #agree_zone input[type=button]{
+   width: 200px;
+   background-color: #fff;
+    border:0;
+    border:1px solid #ccc;
+    height: 40px;
+}

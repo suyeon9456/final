@@ -1,0 +1,103 @@
+@charset "EUC-KR";
+#all_list{
+   width: 60%;
+   margin:0 auto;
+   text-align: center;
+   margin-top: 
+}
+
+#all_list h3{
+   margin:20px auto;
+   font-weight: normal;
+}
+
+
+#all_list .data {
+   display:inline-block;
+   width: 220px;
+   height:320px;
+   float: left;
+   cursor: pointer;
+}
+
+#all_list .data img{
+   width: 200px;
+}
+
+#all_list .data .like_btn{
+   width: 24px;
+   height: 24px;
+   background-image: url("./css/heart_icon.png");
+}
+
+#all_list .data .name{
+   display: block;
+   overflow: hidden;
+    height: 25px;
+    color: #333;
+}
+
+#all_list .data .price{
+   display: block;
+   overflow: hidden;
+    height: 25px;
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: bold;
+}
+#all_list .colors{
+   width: 100%;
+   height: 20px;
+}
+#all_list .suyeon .prices{
+   display: inline-block;
+   text-align:left;
+   width: 140px;
+   margin-left:5px;
+}
+
+#all_list .suyeon .prices .nowp{
+   font-weight: bold;
+}
+
+#all_list .colors span{
+   width: 12px;
+    height: 12px;
+    border: 1px solid #ccc;
+    margin: 3px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+#all_list .suyeon{
+   width: 220px;
+}
+
+#all_list .suyeon .discount{
+   display:inline-block;
+   font-size: 25pt;
+   color: red;
+   text-align: left;
+   margin:0 auto;
+   margin-left:5px;
+   width: 70px;
+   float: left;
+}
+
+#all_list .suyeon .orip{
+   text-decoration: line-through;
+   color: grey;
+}
+
+#all_list .jaewook{
+	padding-right:10px;
+   text-align: right;
+   margin:5px auto;
+   font-size: 13px;
+   font-weight: bold;
+   vertical-align: middle;
+   height: 15px;
+}
+#all_list .jaewook img{
+   display:inline-block;
+   vertical-align: middle;
+}
