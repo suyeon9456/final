@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0 //en"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+
+<insert id="insert" parameterType="member.MemberVo">
+	insert into smember(mid, mname, mpwd, mDate, mjoin, mgender, memail, mphone)
+	values(#{mId}, #{mName}, #{mPwd}, #{mDate}, sysdate, #{mGender}, #{mEmail}, #{mPhone})
+</insert>
+
+<select id="login" parameterType="member.MemberVo" resultType="member.MemberVo">
+	select mId, mName, mGender from smember where mid = #{mId} and mpwd = #{mPwd} 
+</select>
+
+<select id="select" parameterType="String" resultType="member.MemberVo">
+	select mId, mName, mPwd, mDate, mJoin, mGender, mEmail, mPhone from smember where mId = #{_parameter}
+</select>
+
+<select id="findid" parameterType="member.MemberVo" resultType="member.MemberVo">
+	select mId, mEmail, mName from smember where mname=#{mName} and mEmail=#{mEmail} 
+</select>
+
+<select id="findpwd" parameterType="member.MemberVo" resultType="Integer">
+	select count(*) cnt from smember where mid=#{mId} and mname=#{mName} and memail=#{mEmail}
+</select>
+
+<update id="pwd" parameterType="member.MemberVo" >
+	update smember set mpwd = #{mPwd} where mid=#{mId}
+</update>
+
+<update id="modify" parameterType="member.MemberVo" >
+	update smember set mpwd = #{mPwd}, mname =#{mName}, mgender=#{mGender}, mphone=#{mPhone} where mid=#{mId}
+</update>
+
+<update id="modify_no_pwd" parameterType="member.MemberVo" >
+	update smember set mname =#{mName}, mgender=#{mGender}, mphone=#{mPhone} where mid=#{mId}
+</update>
+
+<delete id="delete" parameterType="member.MemberVo">
+	delete from smember where mid = #{mId}
+</delete>
+
+<select id="check" parameterType="String" resultType="Integer">
+    select count(*) cnt from smember where mid = #{mId}
+</select>
+
+<select id="echeck" parameterType="String" resultType="Integer">
+    select count(*) cnt from smember where mEmail = #{mEmail}
+</select>
+
+<select id="cpwd" parameterType="member.MemberVo" resultType="Integer">
+    select count(*) cnt from smember where mId = #{mId} and mPwd = #{mPwd}
+</select>
+
+<select id="checksns" parameterType="String" resultType="Integer">
+   select count(*) cnt from smember where mid = #{_parameter}
+</select>
+
+<insert id="insertsns" parameterType="member.MemberVo">
+   insert into smember(mid, mname, mpwd, mDate, mJoin, mGender, mEmail, mPhone)
+   values(#{mId}, #{mName}, 'sns', #{mDate}, sysdate, #{mGender}, #{mEmail}, 'sns')
+</insert>
+
+<!-- 1대1문의 리스트 사이즈 -->
+<select id = "qnaTotListSize" parameterType="String" resultType = "Integer">
+     select count(*) cnt from sQuestion
+      where qId = #{qId}
+</select>
+<!-- 1대1문의 리스트 조회 -->
+<select id = "qnaSearch" parameterType="member.MyQnaParam" resultType = "member.QnaVo">
+      SELECT * FROM (SELECT ROWNUM rno, A.* FROM (SELECT LPAD(Qsubject, LEVEL*10, '/')
+      seq, qSerial, qId, qContent, qDate, qPserial, qOrder from squestion
+      WHERE qId = #{qId} start with qpserial is NULL connect by prior qserial = qpserial ORDER SIBLINGS by qpserial desc) A) 
+       WHERE rno BETWEEN ${startNo} and ${endNo}
+</select>
+<!-- 1대1문의 뷰 띄우기 -->
+<select id="qnaview" parameterType="Integer" resultType="member.QnaVo">
+   SELECT * FROM SQUESTION WHERE QSERIAL = ${_parameter} OR QPSERIAL = ${_parameter} ORDER BY QSERIAL
+</select>
+<!-- 1대1문의 뷰 사진가져오기 -->
+<select id="qnaphoto" parameterType="Integer" resultType="member.FileVo">
+	select * from sqfile where hpserial = ${_parameter}
+</select>
+
+<!-- 1대1문의 insert -->
+<insert id = "qna_insert" parameterType="member.QnaVo">
+insert into 
+sQuestion(qSerial, qId, qSubject, qContent, qDate, qPserial, qOrder)
+values(seq_quest.nextval, #{qId}, #{qSubject}, #{qContent}, sysdate, '', #{qOrder})
+</insert>
+
+<!-- 1대1문의 file insert -->
+<insert id = "qna_file_insert" parameterType="member.FileVo">
+insert into 
+sQfile(hSerial, hPserial, hPhoto)
+values(seq_qFile.nextval, seq_quest.currval, #{hPhoto})
+</insert>
+
+<!-- 1대1문의 update -->
+<update id="qna_update" parameterType="member.QnaVo">
+		update sQuestion set qSubject = #{qSubject}, qContent = #{qContent}, qDate = sysdate, qOrder = '${qOrder}' where qSerial =${qSerial}
+</update>
+
+<!-- 1대1문의 file 삭제 -->
+<delete id="qna_file_del" parameterType="String">
+	DELETE FROM SQFILE WHERE HPHOTO =#{hPhoto}
+</delete>
+
+<!-- 1대1문의 수정시 file 추가 -->
+<insert id="qna_file_modify" parameterType="member.FileVo">
+	insert into sQfile(hSerial, hPserial, hPhoto)
+	values(seq_qFile.nextval, #{hPserial}, #{hPhoto})
+</insert>
+	
+</mapper>

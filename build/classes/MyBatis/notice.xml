@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0 //en"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice">
+   
+   <select id="totListSize" parameterType="bean.Param" resultType="Integer">
+      select count(*) cnt from sNotice
+      where nid like '%${findStr}%'
+      or nSubject like '%${findStr}%'
+      or nContent like '%${findStr}%'
+
+   </select>
+   
+   
+   <select id="search" parameterType="bean.Param" resultType="bean.NoticeVo">
+      select * from (
+      select rownum rno, A.* from
+      (select
+      nSerial,nid,nsubject,ncontent,nhit,
+      to_char(nDate,'rrrr-MM-dd') ndate
+      from snotice
+      where nid like '%${findStr}%'
+      or nsubject like '%${findStr}%'
+      or to_char(nDate,'rrrr-MM-dd') like '%${findStr}%' 
+      order by nDate desc,nId asc) A
+      )where rno between
+      ${startNo} and ${endNo}
+   </select>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

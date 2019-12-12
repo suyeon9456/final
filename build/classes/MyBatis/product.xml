@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//en"
+      "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="product">
+   
+   <select id="totListSize" parameterType="bean.Param" resultType="Integer">
+      select count(*) cnt from sproduct
+      where pcode like '%${findStr}%'
+      or pname like '%${findStr}%'
+      or pdate like '%${findStr}%'
+
+   </select>
+   
+   
+   <select id="search" parameterType="bean.Param" resultType="bean.ProductVo">
+      select * from (
+      select rownum rno, A.* from
+      (select
+      pcode,pName,pPrice,pLike,pCategory,
+      to_char(pDate,'rrrr-MM-dd') pdate,pstock
+      from sproduct
+      where pcode like '%${findStr}%'
+      or pName like '%${findStr}%'
+      or to_char(pDate,'rrrr-MM-dd') like '%${findStr}%' 
+      order by pDate desc,pcode asc) A
+      )where rno between
+      ${startNo} and ${endNo}
+   </select>
+   
+   <select id = "2016SumSearch" resultType="Integer">
+      select sum(pPrice) pPrice from sProduct
+      where to_char(pDate,'rrrr') = '2016'
+   </select>
+   
+   <select id = "2017SumSearch" resultType="Integer">
+      select sum(pPrice) from sProduct
+      where to_char(pDate,'rrrr') = '2017'
+   </select>
+   
+   <select id = "2018SumSearch" resultType="Integer">
+      select sum(pPrice) from sProduct
+      where to_char(pDate,'rrrr') = '2018'
+   </select>
+   
+   <select id = "2019SumSearch" resultType="Integer">
+      select sum(pPrice) from sProduct
+      where to_char(pDate,'rrrr') = '2019'
+   </select>
+   
+   <select id = "daySearch" parameterType="bean.Param" resultType="bean.ProductVo">
+          select to_char(pDate,'rrrr-MM-dd') pDate, pcode,pname,pPrice,pStock,pLike from sproduct
+          where pDate >= sysdate-1 and pcode like '%${findStr}%'
+         
+   </select>
+   
+   <select id = "daytSearch" parameterType="bean.Param" resultType="bean.ProductVo">
+          select to_char(pDate,'rrrr-MM-dd') pDate, pcode,pname,pPrice,pStock,pLike from sproduct
+           where pDate >= sysdate-3 and pcode like '%${findStr}%'
+         
+   </select>
+   
+      <select id = "daysSearch" parameterType="bean.Param" resultType="bean.ProductVo">
+          select to_char(pDate,'rrrr-MM-dd') pDate, pcode,pname,pPrice,pStock,pLike from sproduct
+       where pDate >= sysdate-7 and pcode like '%${findStr}%'
+         
+   </select>
+   
+   <select id = "ASearch" parameterType="bean.Param"  resultType="bean.ProductVo">
+       select to_char(pDate,'rrrr-MM-dd') pDate, pcode,pname,pPrice,pStock,pLike from sproduct
+          where pcode like '%${findStr}%'
+         or pname like  '%${findStr}%'
+         or pPrice like '%${findStr}%'
+         or pdate like  '%${findStr}%'
+       order by pdate asc
+         
+   </select>
+   
+   <select id = "DSearch" parameterType="bean.Param"  resultType="bean.ProductVo">
+      select to_char(pDate,'rrrr-MM-dd') pDate, pcode,pname,pPrice,pStock,pLike from sproduct
+         where pcode like '%${findStr}%'
+         or pname like  '%${findStr}%'
+         or pPrice like '%${findStr}%'
+         or pdate like  '%${findStr}%'
+       order by pdate desc
+         
+   </select>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+</mapper>
