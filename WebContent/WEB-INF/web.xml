@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns="http://java.sun.com/xml/ns/javaee"
+               xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                     http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+               version="2.5">
+
+<servlet>
+<servlet-name>trade</servlet-name>
+      <servlet-class>org.springframework.web.servlet.DispatcherServlet
+      </servlet-class>
+</servlet>
+<servlet>
+<servlet-name>pay</servlet-name>
+      <servlet-class>org.springframework.web.servlet.DispatcherServlet
+      </servlet-class>
+</servlet>
+<servlet>
+   <servlet-name>member</servlet-name>
+   <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>category</servlet-name>
+	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+</servlet>
+
+
+<servlet-mapping>
+           <servlet-name>trade</servlet-name>
+          <url-pattern>*.trade</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+           <servlet-name>pay</servlet-name>
+          <url-pattern>*.pay</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+   <servlet-name>member</servlet-name>                
+   <url-pattern>*.mem</url-pattern>
+</servlet-mapping>
+
+  <servlet>
+    <servlet-name>product</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>product</servlet-name>
+    <url-pattern>*.shop</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>record</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>record</servlet-name>
+    <url-pattern>*.rcd</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>admin</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>admin</servlet-name>
+    <url-pattern>*.adm</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>refund</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>refund</servlet-name>
+    <url-pattern>*.refund</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+	<servlet-name>category</servlet-name>					 
+	<url-pattern>*.cate</url-pattern>
+</servlet-mapping>
+
+<!-- 노티스 -->
+<servlet>
+	<servlet-name>notice</servlet-name>
+	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>notice</servlet-name>
+	<url-pattern>*.not</url-pattern>
+</servlet-mapping>
+
+<!-- 메인 -->
+<servlet>
+	<servlet-name>main</servlet-name>
+	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>main</servlet-name>
+	<url-pattern>*.main</url-pattern>
+</servlet-mapping>
+
+</web-app>

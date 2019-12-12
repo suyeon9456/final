@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation=
+         "http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+      
+      <bean id = "noticeDao" class ="member.NoticeDao"/>
+      
+      <bean id = "noticeController" class = "servlet.NoticeController" >
+         <constructor-arg ref="noticeDao"></constructor-arg>
+      </bean>
+      
+      <bean id = "viewResolver" 
+         class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
+      
+         <property name = "prefix" value ="/notice/"/>
+         <property name = "suffix" value = ".jsp"/>
+      </bean>
+		
+		<!-- 멀티파트 리졸버 -->
+         <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+               <!-- 최대업로드 가능한 바이트크기 -->
+               <property name="maxUploadSize" value="52428800" />
+      
+               <!-- defaultEncoding -->
+               <property name="defaultEncoding" value="utf-8" />
+         </bean>
+	
+</beans>

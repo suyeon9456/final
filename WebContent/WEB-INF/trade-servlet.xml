@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+               xmlns="http://www.springframework.org/schema/beans"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans.xsd"
+               >
+<bean id='cartDao' class='bean.CartDao' />
+
+<bean id="tradeController" class="servlet.TradeController">
+<constructor-arg ref="cartDao"/>
+</bean>
+
+<bean id='viewResolver' class='org.springframework.web.servlet.view.InternalResourceViewResolver' >
+<property name="prefix" value="/trade/" />
+<property name="suffix" value=".jsp"/>
+</bean>
+</beans>

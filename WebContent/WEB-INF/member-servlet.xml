@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation=
+         "http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd">
+      
+      <bean id = "memberDao" class ="member.MemberDao"/>
+      
+      <bean id = "memberController" class = "servlet.MemberController" >
+         <constructor-arg ref="memberDao"></constructor-arg>
+      </bean>
+      
+      <bean id = "viewResolver" 
+         class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
+      
+         <property name = "prefix" value ="/member/"/>
+         <property name = "suffix" value = ".jsp"/>
+      </bean>
+      
+      
+       <bean id='testMailer' class="mail.TestMailer">
+				<property name="host" value="smtp.naver.com" />
+				<property name="password" value="******" />
+				<property name="tail" value='@naver.com'/>
+				<property name="user" value='jju08297'/>
+		</bean>
+		
+		
+		<!-- 멀티파트 리졸버 -->
+         <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+               <!-- 최대업로드 가능한 바이트크기 -->
+               <property name="maxUploadSize" value="52428800" />
+      
+               <!-- defaultEncoding -->
+               <property name="defaultEncoding" value="utf-8" />
+         </bean>
+	
+	<!-- @ResponseBody로 String 처리할때 한글처리 -->
+        <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+            <property name="supportedMediaTypes">
+                <list>
+                    <value>text/html;charset=UTF-8</value>
+                </list>
+            </property>
+        </bean>
+</beans>
